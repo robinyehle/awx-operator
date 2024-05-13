@@ -1,8 +1,8 @@
 ---
 - name: Run creation tasks
-  include_tasks: creation.yml
   when: not finalizer_run
+  ansible.builtin.include_tasks: creation.yml
 
 - name: Run finalizer tasks
-  include_tasks: finalizer.yml
   when: finalizer_run
+  ansible.builtin.include_tasks: finalizer.yml
